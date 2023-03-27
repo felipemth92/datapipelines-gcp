@@ -35,7 +35,7 @@ module "bigquery-dataset-gasolina" {
         expiration_time = null,
         clustering      = ["produto","regiao_sigla", "estado_sigla"],
         labels          = {
-          name    = "stack_data_pipeline",
+          name    = "datapipeline01"
           project  = "gasolina"
         },
         deletion_protection = true
