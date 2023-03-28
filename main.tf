@@ -35,7 +35,7 @@ module "bigquery-dataset-gasolina" {
         expiration_time = null,
         clustering      = ["produto","regiao_sigla", "estado_sigla"],
         labels          = {
-          name    = "datapipeline02"
+          name    = "stack_data_pipeline"
           project  = "gasolina"
         },
         deletion_protection = true
@@ -43,7 +43,6 @@ module "bigquery-dataset-gasolina" {
     }
   ]
 }
-
 
 module "bucket-raw" {
   source  = "./modules/gcs"
