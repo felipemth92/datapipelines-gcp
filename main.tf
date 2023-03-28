@@ -35,7 +35,7 @@ module "bigquery-dataset-gasolina" {
         expiration_time = null,
         clustering      = ["produto","regiao_sigla", "estado_sigla"],
         labels          = {
-          name    = "stack_data_pipeline"
+          name    = "data_pipeline"
           project  = "gasolina"
         },
         deletion_protection = true
@@ -47,7 +47,7 @@ module "bigquery-dataset-gasolina" {
 module "bucket-raw" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-raw"
+  name       = "data-pipeline-combustiveis-brasil-raw"
   project_id = var.project_id
   location   = var.region
 }
@@ -55,7 +55,7 @@ module "bucket-raw" {
 module "bucket-curated" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-curated"
+  name       = "data-pipeline-combustiveis-brasil-curated"
   project_id = var.project_id
   location   = var.region
 }
@@ -63,7 +63,7 @@ module "bucket-curated" {
 module "bucket-pyspark-tmp" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-pyspark-tmp"
+  name       = "data-pipeline-combustiveis-brasil-pyspark-tmp"
   project_id = var.project_id
   location   = var.region
 }
@@ -71,7 +71,7 @@ module "bucket-pyspark-tmp" {
 module "bucket-pyspark-code" {
   source  = "./modules/gcs"
 
-  name       = "data-pipeline-stack-combustiveis-brasil-pyspark-code"
+  name       = "data-pipeline-combustiveis-brasil-pyspark-code"
   project_id = var.project_id
   location   = var.region
 }
